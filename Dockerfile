@@ -51,6 +51,11 @@ RUN useradd -m -d /home/topix -p $(openssl passwd -1 'topix') -G root -s /bin/ba
     && usermod -a -G sudo topix \
     && ln -s /usr/share/nginx/www /home/topix/www
 
+RUN mkdir /home/topix/site \
+    && touch /home/topix/site/index.php \
+    && echo "Hello World" > /home/topix/site/index.php \
+    && mv /home/topix/site /usr/share/nginx/www
+
 RUN chown -R topix:www-data /usr/share/nginx/www \
     && chmod -R 775 /usr/share/nginx/www
 
