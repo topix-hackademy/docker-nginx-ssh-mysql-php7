@@ -3,6 +3,7 @@ Docker Container for NGINX / PHP7 / MYSQL / SSH
 
 A Dockerfile that installs the latest Ubuntu 16.04 with nginx 1.10.0, php-fpm7.0, php7.0 APC User Cache and openssh. You can also handle the services using supervisord.
 
+
 ## Installation
 
 The easiest way get up and running with this docker container is to pull the latest stable version from the [Docker Hub Registry](https://hub.docker.com/r/alexcomu/docker-nginx-ssh-mysql-php7/):

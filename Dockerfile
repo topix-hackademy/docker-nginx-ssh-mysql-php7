@@ -73,4 +73,5 @@ EXPOSE 22
 # volume for mysql database and install
 VOLUME ["/var/lib/mysql", "/usr/share/nginx/www", "/var/run/sshd"]
 
+# Run
 CMD ["/bin/bash", "/start.sh"]
