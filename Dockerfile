@@ -22,11 +22,9 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN apt-get install -y build-essential
 
-# NPM Task Manager and Process Manager
+# NPM Task Manager
 RUN npm install --global gulp-cli
 RUN npm install -g grunt-cli
-RUN npm install -g nodemon
-run npm install pm2 -g
 
 # PHP Requirements
 RUN apt-get -y install php-xml php-mbstring php-bcmath php-zip php-pdo-mysql php-curl php-gd php-intl php-pear php-imagick php-imap php-mcrypt php-memcache php-apcu php-pspell php-recode php-tidy php-xmlrpc
