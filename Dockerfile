@@ -17,6 +17,11 @@ RUN apt-get -y upgrade
 RUN apt-get -y install pwgen python-setuptools curl git nano sudo unzip openssh-server openssl vim htop
 RUN apt-get -y install mysql-server mysql-client nginx php-fpm php-mysql
 
+# Node Installation
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
+
 # PHP Requirements
 RUN apt-get -y install php-xml php-mbstring php-bcmath php-zip php-pdo-mysql php-curl php-gd php-intl php-pear php-imagick php-imap php-mcrypt php-memcache php-apcu php-pspell php-recode php-tidy php-xmlrpc
 
