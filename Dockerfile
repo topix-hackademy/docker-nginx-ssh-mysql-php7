@@ -15,3 +15,10 @@ RUN apt-get -y install php*-ldap
 # Composer Installation
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+
+# nginx site conf
+ADD ./nginx-site.conf /etc/nginx/sites-available/default
+
+# Initialization and Startup Script
+ADD ./start.sh /start.sh
+RUN chmod 755 /start.sh
