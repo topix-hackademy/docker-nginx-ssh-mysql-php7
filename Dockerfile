@@ -19,6 +19,9 @@ RUN mv composer.phar /usr/local/bin/composer
 # nginx site conf
 ADD ./nginx-site.conf /etc/nginx/sites-available/default
 
+# Gulp command fix
+RUN apt-get -y install libnotify-bin
+
 # Initialization and Startup Script
 ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
