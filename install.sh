@@ -38,20 +38,16 @@ sleep 30
 
 # remote host
 echo -e ${GREEN}Login container${NC}
-ssh topix@localhost -p 7002 <<'ENDSSH'
-
-PRODUCTION=false
+ssh topix@localhost -p $SSH_PORT <<'ENDSSH'
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-APP_NAME=NAME_FOR_YOUR_APP
-
-PROJECT_FOLDER=/usr/share/nginx/www/$APP_NAME
-CHECK_NODE_MODULES_DIRECTORY=/usr/share/nginx/www/$APP_NAME/node_modules
-CHECK_VENDOR_DIRECTORY=/usr/share/nginx/www/$APP_NAME/vendor
-ENV_FILE=/usr/share/nginx/www/$APP_NAME/.env
+PROJECT_FOLDER=/usr/share/nginx/www
+CHECK_NODE_MODULES_DIRECTORY=/usr/share/nginx/www/node_modules
+CHECK_VENDOR_DIRECTORY=/usr/share/nginx/www/vendor
+ENV_FILE=/usr/share/nginx/www/.env
 
 # check if path exist
 if [ ! -d "$CHECK_VENDOR_DIRECTORY" ]; then
