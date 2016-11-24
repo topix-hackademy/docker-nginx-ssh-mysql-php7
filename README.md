@@ -35,9 +35,9 @@ MYSQL_PORT=9000
 ```
 
 ```
-APP_NAME=NAME_FOR_YOUR_APP (twice)
+APP_NAME=NAME_FOR_YOUR_APP
 BUILD=NAME_FOR_YOUR_BUILD
-REPOSITORY=https://username@bitbucket.org/something.. $APP_NAME
+REPOSITORY=https://github.com/andreafspeziale/project-flyer (for instance)
 ```
 
 ## Installation for Local Development
@@ -59,7 +59,7 @@ The script will also handle .env configuration file, vendors and migrations
 When it finish, visit on your browser localhost:8002
 
 
-You can alsol log into the container with ssh topix@localhost -p 7002 (psw topix)
+You can alsol log into the container with ssh topix@localhost -p $SSH_PORT (psw topix)
 
 ## Development notes
 The install script and with a gulp watch so you will be able to start developing directly on your machine with your favorite IDE and see live changes on your browser
