@@ -15,14 +15,14 @@ MYSQL_PORT=9000
 
 APP_NAME=NAME_FOR_YOUR_APP
 BUILD=NAME_FOR_YOUR_BUILD
-REPOSITORY=https://username@bitbucket.org/something.. $APP_NAME
+REPOSITORY=https://username@bitbucket.org/something..
 
 HOST_PROJECT_PATH=$(pwd)/$APP_NAME
 
 # clone
 if [ ! -d "$HOST_PROJECT_PATH" ]; then
     echo -e ${GREEN}Cloning $APP_NAME repository start${NC}
-    git clone $REPOSITORY
+    git clone $REPOSITORY $APP_NAME
 else
     echo -e ${GREEN}Repository $APP_NAME already cloned${NC}
 fi
