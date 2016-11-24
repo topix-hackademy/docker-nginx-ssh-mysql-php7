@@ -33,7 +33,7 @@ docker build -t="$BUILD" .
 
 # run container
 echo -e ${GREEN}Running container${NC}
-docker run -v $HOST_PROJECT_PATH:/usr/share/nginx/www -p $SSH_PORT:22 -p $APP_PORT:80 -p $MYSQL_PORT:3306 --name APP_NAME -h APP_NAME -d $BUILD
+docker run -v $HOST_PROJECT_PATH:/usr/share/nginx/www -p $SSH_PORT:22 -p $APP_PORT:80 -p $MYSQL_PORT:3306 --name $APP_NAME -h $APP_NAME -d $BUILD
 sleep 30
 
 # remote host
