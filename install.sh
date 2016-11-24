@@ -93,6 +93,6 @@ fi
 echo -e ${GREEN}Make migration${NC}
 cd $PROJECT_FOLDER
 php artisan migrate --seed
-gulp watch
+gulp
 
 ENDSSH
