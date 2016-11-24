@@ -80,3 +80,15 @@ and start it again with
 ```
 $ docker start APP_NAME (set in install.sh) (remember to log into the container and run gulp watch)
 ```
+
+## Troubleshooting
+Letting gulp working from the Docker container can slow down your system.
+After the installation script ctrl c the console and run gulp from your machine.
+
+If a saas error occurs try to rebuild it with 
+
+```
+npm rebuild node-sass
+```
+
+You will need node - npm - and gulp on your machine.
