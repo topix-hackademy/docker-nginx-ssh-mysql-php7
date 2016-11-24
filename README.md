@@ -66,11 +66,11 @@ The install script and with a gulp watch so you will be able to start developing
 You can stop the container with
 
 ```
-$ docker stop streamingtools
+$ docker stop APP_NAME (set in install.sh)
 ```
 
 and start it again with
 
 ```
-$ docker start streamingtools (remember to log into the container and run gulp watch)
+$ docker start APP_NAME (set in install.sh) (remember to log into the container and run gulp watch)
 ```
