@@ -49,7 +49,7 @@ $ bash install.sh
 
 The script will prompt you just twice:
 ```
-- The first time for ST repository git clone.
+- The first time for repository git clone.
 - The second time for Docker container ssh login (psw topix).
 ```
 
