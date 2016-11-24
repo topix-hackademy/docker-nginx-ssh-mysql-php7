@@ -27,6 +27,12 @@ set the DB connection info in the start.sh script
 The complete installation will take at least 10 minutes
 
 ## Preferences
+First of all you must copy this two file as follow
+```
+cp install.sh.sample install.sh
+cp start.sh.sample start.sh
+```
+
 You can actually decide which port Docker will map on your machine by simply editing the install script
 ```
 SSH_PORT=7002
