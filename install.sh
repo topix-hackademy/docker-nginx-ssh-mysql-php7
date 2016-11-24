@@ -40,6 +40,8 @@ sleep 30
 echo -e ${GREEN}Login container${NC}
 ssh topix@localhost -p $SSH_PORT <<'ENDSSH'
 
+PRODUCTION=false
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
