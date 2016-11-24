@@ -1,8 +1,7 @@
 !/bin/bash
 
 PRODUCTION=false
-DB_NAME=something
-DB_USER=something
+
 # mysql setup
 if [ ! -f /setup.txt ]; then
   #mysql has to be started this way as it doesn't work to call from /etc/init.d

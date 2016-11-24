@@ -12,7 +12,7 @@ You can also handle the services using supervisord
 Docker for mac, download [here](https://docs.docker.com/docker-for-mac/ "Docker for mac download")
 
 ## Advises
-Set the docker resources preferencies to more than 2CPU and 2Gb of RAM
+Set the docker resources preferences to more than 2CPU and 2Gb of RAM
 
 You can set it from docker preferences panel
 
