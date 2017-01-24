@@ -29,8 +29,13 @@ The complete installation will take at least 10 minutes
 ## Preferences
 First of all you must copy this two file as follow
 ```
-cp install.sh.sample install.sh
-cp start.sh.sample start.sh
+cp install.sh.sample install.sh (if you have to clone an existing repo)
+or
+cp install-scratch.sh.sample install.sh (if you have to start a laravel project from scratch)
+---------------------------
+cp start.sh.sample start.sh (if you have to clone an existing repo)
+or
+cp start-scratch.sh.sample start.sh (if you have to start a laravel project from scratch)
 ```
 
 You can actually decide which port Docker will map on your machine by simply editing the install script
