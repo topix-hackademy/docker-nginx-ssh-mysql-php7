@@ -47,7 +47,7 @@ ENV_FILE=/usr/share/nginx/www/.env
 # create project
 echo -e ${RED}Creating the project${NC}
 cd $PROJECT_FOLDER
-composer create-project --prefer-dist laravel/laravel
+composer create-project laravel/laravel . --prefer-dist
 echo -e ${GREEN}Project created${NC}
 
 # composer install
