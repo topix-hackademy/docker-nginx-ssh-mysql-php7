@@ -15,7 +15,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 # Basic Requirements
-RUN apt-get -y install pwgen python-setuptools curl git nano sudo unzip openssh-server openssl vim htop
+RUN apt-get -y install pwgen python-setuptools python-pip curl git nano sudo unzip openssh-server openssl vim htop
 RUN apt-get -y install mysql-server mysql-client nginx php-fpm php-mysql
 
 # PHP Requirements
@@ -43,8 +43,10 @@ RUN sed -i -e "s/user\s*=\s*www-data/user = topix/g" /etc/php/7.0/fpm/pool.d/www
 ADD ./nginx-site.conf /etc/nginx/sites-available/default
 
 # Supervisor Config
-RUN /usr/bin/easy_install supervisor
-RUN /usr/bin/easy_install supervisor-stdout
+#RUN /usr/bin/easy_install supervisor
+#RUN /usr/bin/easy_install supervisor-stdout
+RUN python -m pip install supervisor
+RUN python -m pip install supervisor-stdout
 ADD ./supervisord.conf /etc/supervisord.conf
 
 # Add system user for topix
