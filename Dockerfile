@@ -5,6 +5,7 @@ MAINTAINER Alex Comunian <alex.comunian@gmail.com>
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 RUN mkdir /var/run/sshd
+RUN mkdir /var/run/mysqld
 RUN mkdir /run/php
 
 # Let the conatiner know that there is no tty
@@ -14,7 +15,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 # Basic Requirements
-RUN apt-get -y install pwgen python-setuptools curl git nano sudo unzip openssh-server openssl vim htop
+RUN apt-get -y install pwgen python-setuptools python-pip curl git nano sudo unzip openssh-server openssl vim htop
 RUN apt-get -y install mysql-server mysql-client nginx php-fpm php-mysql
 
 # PHP Requirements
@@ -22,6 +23,7 @@ RUN apt-get -y install php-xml php-mbstring php-bcmath php-zip php-pdo-mysql php
 
 # mysql config
 RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/explicit_defaults_for_timestamp = true\nbind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
+RUN chown mysql:mysql /var/run/mysqld
 
 # nginx config
 RUN sed -i -e"s/user\s*www-data;/user topix www-data;/" /etc/nginx/nginx.conf
@@ -41,8 +43,10 @@ RUN sed -i -e "s/user\s*=\s*www-data/user = topix/g" /etc/php/7.0/fpm/pool.d/www
 ADD ./nginx-site.conf /etc/nginx/sites-available/default
 
 # Supervisor Config
-RUN /usr/bin/easy_install supervisor
-RUN /usr/bin/easy_install supervisor-stdout
+#RUN /usr/bin/easy_install supervisor
+#RUN /usr/bin/easy_install supervisor-stdout
+RUN python -m pip install supervisor
+RUN python -m pip install supervisor-stdout
 ADD ./supervisord.conf /etc/supervisord.conf
 
 # Add system user for topix
@@ -71,7 +75,7 @@ EXPOSE 80
 EXPOSE 22
 
 # volume for mysql database and install
-VOLUME ["/var/lib/mysql", "/usr/share/nginx/www", "/var/run/sshd"]
+VOLUME ["/var/lib/mysql", "/usr/share/nginx/www", "/var/run/sshd", "/var/run/mysqld"]
 
 # Run
 CMD ["/bin/bash", "/start.sh"]
